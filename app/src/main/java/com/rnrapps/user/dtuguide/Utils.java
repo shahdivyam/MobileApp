@@ -74,19 +74,6 @@ public class Utils {
             String shareBody = "https://play.google.com/store/apps/details?id=com.rnrapps.user.dtuguide&hl=en";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             context.startActivity(Intent.createChooser(sharingIntent, "Share via"));
-        } else if (id == R.id.nav_rate) {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName())));
-        } else if (id == R.id.nav_about) {
-            Intent intent=new Intent(context,AboutDevelopers.class);
-            context.startActivity(intent);
-        }
-        else if(id == R.id.nav_feedback){
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "feedback");
-            intent.setData(Uri.parse("mailto:dtuapp16@gmail.com"));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
         }
 
     }
